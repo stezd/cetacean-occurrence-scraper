@@ -18,6 +18,9 @@ ENV/
 .idea/
 *.swp
 
+# Local agent tooling
+.serena/
+
 # OS
 .DS_Store
 Thumbs.db
