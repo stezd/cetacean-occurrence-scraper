@@ -1,6 +1,6 @@
 # Whale Sighting Scraper
 
-Standalone data extraction script for whale sighting data, completely separated from robotiku-erp.
+Standalone data extraction script for whale sighting data.
 
 ## Requirements & Scope
 - Target: Whale sighting data extraction
