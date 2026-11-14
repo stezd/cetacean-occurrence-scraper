@@ -23,7 +23,7 @@ Seasonal habitat suitability modeling pipeline for whale shark (*Rhincodon typus
 | modifying code or running the GBIF fetcher | [codebase-conventions.md](_shared/codebase-conventions.md) | `stages/01_occurrences/output/check.md` |
 | checking research scope, predictors, or models | [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md) | the spec section needed |
 | looking up a paper or citation | [literature/markdown/README.md](literature/markdown/README.md) | the paper's `summary.md` |
-| drafting or compiling the IPB thesis/proposal | [ipb-thesis-latex/CONTEXT.md](ipb-thesis-latex/CONTEXT.md) | `ipb-thesis-latex/main.pdf` build check |
+| drafting or compiling the IPB thesis/proposal (the author writes the prose; you research, format, cite) | [ipb-thesis-latex/CONTEXT.md](ipb-thesis-latex/CONTEXT.md) "Writing rules" | `ipb-thesis-latex/main.pdf` build check |
 | asked for status or link health | scan `stages/*/output/check.md` and run `python -I _tools/links.py` | report what exists |
 
 ## Companion Obsidian vault (external)

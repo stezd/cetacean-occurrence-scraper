@@ -1,62 +1,208 @@
 % =============================================================================
-% Contoh Daftar Pustaka dari templat Skripsi Sain-Tek-Kes [20260812].
+% Daftar Pustaka skripsi: hiu paus (Rhincodon typus), adaptasi domain KMM.
 %
-% Ganti entri contoh ini dengan pustaka yang benar-benar diacu dalam naskah.
+% Kunci sitasi: NamaKeluargaPenulisPertamaTahun (contoh: Sahri2021).
 % Nama ditulis sebagai "Nama keluarga, Inisial" dan dipisahkan dengan "and".
+% Metadata diambil dari literature/markdown/*/summary.md dan DOI-nya.
+% Entri bertanda "VERIFIKASI" belum dicek ke halaman resmi penerbit.
+% Daftar rujukan yang belum dimasukkan karena metadata belum lengkap:
+%   Pacheco et al. 2021 (Mar Ecol Prog Ser 666:203-215, doi 10.3354/meps13686,
+%   daftar penulis belum ada) dan Barthel et al. 2025 (naskah anonim).
 % =============================================================================
 
-@book{Arifin2023,
-  author    = {Arifin, H S and Kaswanto},
-  year      = {2023},
-  title     = {Manajemen Ruang Terbuka Biru untuk Pengendali Banjir},
-  publisher = {IPB Press}
+% --- Pedoman dan status spesies ----------------------------------------------
+
+@book{Noviana2025,
+  author    = {Noviana, D. and Lestari, Y. and Achmadi, S. S. and Maddu, A. and
+               Defina and Wijayanti, D. G. S. and Wahyuni, P. F.},
+  year      = {2025},
+  title     = {Pedoman Penyajian Tugas Akhir Mahasiswa Institut Pertanian Bogor},
+  publisher = {IPB Press},
+  address   = {Bogor},
+  note      = {Peraturan Rektor IPB Nomor 48 Tahun 2025}
 }
 
-@article{Aulia2024,
-  author  = {Aulia, G. and Rachman, F. and Untari, F. and Rasyid, A. and
-             Hapsari, Y.},
-  year    = {2024},
-  title   = {Utilizing the co-culture method to improve the investigation of
-             secondary metabolites of marine bacteria},
-  journal = {J Appl Pharm Sci},
-  volume  = {14},
-  number  = {1},
-  pages   = {286--290},
-  doi     = {10.7324/JAPS.2024.136305}
+% VERIFIKASI: ID taksa 19488 dan nomor penilaian 2365291 berasal dari URL
+% IUCN yang diingat, bukan dari halaman resmi (halaman menolak akses otomatis).
+@misc{Pierce2016,
+  author       = {Pierce, S. J. and Norman, B.},
+  year         = {2016},
+  title        = {{\textit{Rhincodon typus}}},
+  howpublished = {The IUCN Red List of Threatened Species 2016},
+  note         = {e.T19488A2365291},
+  doi          = {10.2305/IUCN.UK.2016-1.RLTS.T19488A2365291.en}
 }
 
-@article{Brett2025,
-  author  = {Brett, D F},
-  year    = {2025},
-  title   = {Titles in archaeology research articles: A corpus-based comparison
-             with other disciplines},
-  journal = {J Engl Acad Purp},
-  volume  = {77},
-  pages   = {1--11},
-  doi     = {10.1016/j.jeap.2025.101545}
+% --- Pemodelan habitat di Indonesia ------------------------------------------
+
+@article{Sahri2021,
+  author  = {Sahri, A. and Putra, M. I. H. and Mustika, P. L. K. and
+             Kreb, D. and Murk, A. J.},
+  year    = {2021},
+  title   = {Cetacean habitat modelling to inform conservation management,
+             marine spatial planning, and as a basis for anthropogenic threat
+             mitigation in {Indonesia}},
+  journal = {Ocean \& Coastal Management},
+  volume  = {205},
+  pages   = {105555},
+  doi     = {10.1016/j.ocecoaman.2021.105555}
 }
 
-@article{Pezzino2026,
-  author  = {Pezzino, V. and Berbary, C. and McKinney, C. and Sangiorgio, C.
-             and Moriuchi, E. and others},
+@article{Sahri2023,
+  author  = {Sahri, A. and Maters, F. and Putra, M. I. H. and
+             Mustika, P. L. K. and Kreb, D. and van Lammeren, R. J.},
+  year    = {2023},
+  title   = {Predicting cetacean habitats beyond surveyed regions in
+             {Indonesian} waters: species distribution model transferability
+             may not always be preferable},
+  journal = {IOP Conference Series: Earth and Environmental Science},
+  volume  = {1276},
+  pages   = {012054},
+  doi     = {10.1088/1755-1315/1276/1/012054}
+}
+
+% --- Adaptasi domain dan transferabilitas ------------------------------------
+
+@article{Serov2026,
+  author  = {Serov, E. and Koldasbayeva, D. and Zaytsev, A.},
   year    = {2026},
-  title   = {Working alliance and subjective engagement with a digital avatar
-             CBT platform ({RITch®CBT}): Comparing young adults with and
-             without co-occuring substance use and depression},
-  journal = {Behav Sci},
+  title   = {Kernel mean matching enhances risk estimation under spatial
+             distribution shifts},
+  journal = {Scientific Reports},
   volume  = {16},
-  number  = {5},
-  pages   = {1--21},
-  doi     = {10.3390/bs16050719}
+  pages   = {6921},
+  doi     = {10.1038/s41598-026-36740-7}
 }
 
-@article{Rajam2022,
-  author  = {Rajam, R. and Subramanian, P.},
-  year    = {2022},
-  title   = {Encapsulation of probiotics: Past, present, and future},
-  journal = {Beni-Suef Univ J Basic Appl Sci},
-  volume  = {11},
-  number  = {46},
-  pages   = {1--18},
-  doi     = {10.1186/s43088-022-00228-w}
+@article{Wilson2026,
+  author  = {Wilson, J. C. and Trathan, P. N. and Venables, H. J. and
+             Bornemann, H. and Constantine, R. and Costa, D. P. and
+             Dalla Rosa, L. and Emmerson, L. and Friedlaender, A. S. and
+             Goebel, M. E. and Goldsworthy, S. and Hindell, M. A. and
+             Hinke, J. T. and Lea, M.-A. and Chilvers, B. L. and
+             Olmastroni, S. and Ropert-Coudert, Y. and Southwell, C. and
+             Reisinger, R. R.},
+  year    = {2026},
+  title   = {Temporal and spatial transferability in telemetry-based dynamic
+             species distribution models: the effects of algorithms and
+             pseudo-absence techniques},
+  journal = {Ecological Modelling},
+  volume  = {521},
+  pages   = {111702},
+  doi     = {10.1016/j.ecolmodel.2026.111702}
+}
+
+% --- Data oportunistik dan sains warga ---------------------------------------
+
+@dataset{Dares2025,
+  author    = {Dares, L. E. and Robinson, C. V.},
+  year      = {2025},
+  title     = {Maxent species distribution modelling of 10 cetacean species in
+               the northeastern Pacific from citizen science occurrence
+               records},
+  publisher = {Dryad Digital Repository},
+  doi       = {10.5061/dryad.sn02v6xfv},
+  note      = {Artikel pendamping: J Biogeogr, doi 10.1111/jbi.15164}
+}
+
+@article{Gonnerman2026,
+  author  = {Gonnerman, M. and Mullinax, J. M. and Sullivan, J. D. and
+             Kent, C. M. and Prosser, D. J.},
+  year    = {2026},
+  title   = {Improved estimates of relative occurrence and abundance using
+             opportunistic surveys and presence-only observations: a
+             zero-inflated integrated species distribution model},
+  journal = {Ecological Modelling},
+  volume  = {521},
+  pages   = {111712},
+  doi     = {10.1016/j.ecolmodel.2026.111712}
+}
+
+% --- Validasi dan praktik pemodelan sebaran ----------------------------------
+
+@article{Smith2021,
+  author  = {Smith, J. N. and Kelly, N. and Renner, I. W.},
+  year    = {2021},
+  title   = {Validation of presence-only models for conservation planning and
+             the application to whales in a multiple-use marine park},
+  journal = {Ecological Applications},
+  volume  = {31},
+  number  = {1},
+  pages   = {e02214},
+  doi     = {10.1002/eap.2214}
+}
+
+@article{Fiedler2018,
+  author  = {Fiedler, P. C. and Redfern, J. V. and Forney, K. A. and
+             Palacios, D. M. and Sheredy, C. and Rasmussen, K. and
+             Garc{\'\i}a-Godos, I. and Santill{\'a}n, L. and Tetley, M. J. and
+             F{\'e}lix, F. and Ballance, L. T.},
+  year    = {2018},
+  title   = {Prediction of large whale distributions: a comparison of
+             presence-absence and presence-only modeling techniques},
+  journal = {Frontiers in Marine Science},
+  volume  = {5},
+  pages   = {419},
+  doi     = {10.3389/fmars.2018.00419}
+}
+
+@article{Correia2021,
+  author  = {Correia, A. M. and Sousa-Guedes, D. and Gil, {\'A}. and
+             Valente, R. and Rosso, M. and Sousa-Pinto, I. and Sillero, N. and
+             Pierce, G. J.},
+  year    = {2021},
+  title   = {Predicting cetacean distributions in the eastern {North Atlantic}
+             to support marine management},
+  journal = {Frontiers in Marine Science},
+  volume  = {8},
+  pages   = {643569},
+  doi     = {10.3389/fmars.2021.643569}
+}
+
+@article{Bennington2020,
+  author  = {Bennington, S. and Rayment, W. and Dawson, S.},
+  year    = {2020},
+  title   = {Putting prey into the picture: improvements to species
+             distribution models for bottlenose dolphins in {Doubtful Sound},
+             {New Zealand}},
+  journal = {Marine Ecology Progress Series},
+  volume  = {653},
+  pages   = {191--204},
+  doi     = {10.3354/meps13492}
+}
+
+@article{Pasanisi2024,
+  author  = {Pasanisi, E. and Pace, D. S. and Orasi, A. and Vitale, M. and
+             Arcangeli, A.},
+  year    = {2024},
+  title   = {A global systematic review of species distribution modelling
+             approaches for cetaceans and sea turtles},
+  journal = {Ecological Informatics},
+  volume  = {82},
+  pages   = {102700},
+  doi     = {10.1016/j.ecoinf.2024.102700}
+}
+
+@article{Karimi2026,
+  author  = {Karimi, J. D. and Quattrocchi, G. and Cucco, A. and
+             Perilli, A. and Pavone, S. and Sinerchia, M.},
+  year    = {2026},
+  title   = {Modeling habitat suitability for eight cetacean species in the
+             {Mediterranean Sea}},
+  journal = {Frontiers in Marine Science},
+  volume  = {13},
+  pages   = {1818571},
+  doi     = {10.3389/fmars.2026.1818571}
+}
+
+% VERIFIKASI: nomor artikel e03856 berasal dari ringkasan; DOI belum ada.
+@article{Sapag2025,
+  author  = {Sapag, C. and Capella, J. and Vilina, Y. and
+             van Langevelde, F.},
+  year    = {2025},
+  title   = {Explaining humpback whale distribution and abundance in the
+             {Magellan Strait}, {Chile}},
+  journal = {Global Ecology and Conservation},
+  volume  = {62},
+  pages   = {e03856}
 }
