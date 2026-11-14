@@ -1,0 +1,31 @@
+% =============================================================================
+% Daftar Isi dan daftar ilustrasi -- PPTA IPB 2026
+% Daftar Tabel/Gambar/Lampiran hanya dicetak bila jumlahnya lebih dari satu.
+% =============================================================================
+
+\renewcommand{\contentsname}{DAFTAR ISI}
+\tableofcontents
+
+\clearpage
+\thispagestyle{empty}
+
+\iftotaltables
+  \ifnum\totaltables>1\relax
+    \addcontentsline{toc}{chapter}{DAFTAR TABEL}
+    \ipblistoftables
+  \fi
+\fi
+
+\iftotalfigures
+  \ifnum\totalfigures>1\relax
+    \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+    \ipblistoffigures
+  \fi
+\fi
+
+\iftotallampirans
+  \ifnum\totallampirans>1\relax
+    \addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
+    \ipblistofappendices
+  \fi
+\fi

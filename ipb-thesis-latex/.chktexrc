@@ -1,0 +1,12 @@
+# ChkTeX configuration for the IPB thesis template.
+# Suppress warnings that conflict with Indonesian prose or deliberate layout.
+
+CmdLine
+{
+  -n1
+  -n8
+  -n13
+  -n18
+  -n24
+  -n36
+}

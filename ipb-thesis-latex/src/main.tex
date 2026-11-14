@@ -1,0 +1,129 @@
+% =============================================================================
+% main.tex -- Entry point Template Tugas Akhir Sarjana (S1) IPB University
+%
+% Template LaTeX ini diadaptasi dari PPTA IPB 2026 dan templat resmi
+% Skripsi Sains, Teknik, dan Kesehatan [20260812].
+%
+% Struktur:
+%   src/
+%     main.tex                    Berkas ini (entry point)
+%     config/                     Paket dan konfigurasi format
+%       ipb-thesis.sty            Style utama (margins, font, headings, dll.)
+%       information.tex           Data penulis, skripsi, institusi
+%       hyphenation-id.tex        Aturan pemenggalan kata
+%     abstract/                   Abstrak (id) dan Abstract (en)
+%     preliminaries/              Bagian Awal (cover, pernyataan, dll.)
+%     chapters/                   Bagian Inti (Bab I s.d. Bab V)
+%     backmatter/                 Bagian Akhir (daftar pustaka, lampiran)
+%     resources/                  Gambar, logo, dan sumber daya lain
+%     refs/                       Database referensi BibTeX
+%
+% Konversi dan adaptasi ke LaTeX: Raihan Putra Kirana (@raihanpka)
+% Lisensi: MIT (lihat LICENSE)
+% =============================================================================
+
+% -----------------------------------------------------------------------------
+% 1. Kelas Dokumen & Paket Utama
+% -----------------------------------------------------------------------------
+\documentclass[12pt,a4paper,twoside,openright]{book}
+
+% Style utama (margins, font, headings, captions, dst.)
+\usepackage{ipb-thesis}
+\usepackage{verbatim}
+\usepackage{comment}
+
+% Data penulis, skripsi, institusi
+\input{config/information}
+
+% Aturan pemenggalan kata
+\input{config/hyphenation-id}
+
+% Database referensi untuk biblatex + biber
+\addbibresource{src/refs/daftar-pustaka.bib}
+
+% -----------------------------------------------------------------------------
+% 2. Page Styles didefinisikan di ipb-thesis.sty
+%    - Bagian awal: nomor halaman tidak ditampilkan.
+%    - Bagian utama/akhir: nomor Arab di sudut luar atas.
+%    - Halaman pembuka bab: nomor tidak ditampilkan.
+% -----------------------------------------------------------------------------
+
+% -----------------------------------------------------------------------------
+% 3. Metadata untuk hyperref
+% -----------------------------------------------------------------------------
+\title{\JudulSkripsi}
+\author{\NamaPenulis}
+\date{\Tahun}
+
+% -----------------------------------------------------------------------------
+% 4. Titik Mulai Dokumen
+% -----------------------------------------------------------------------------
+\begin{document}
+
+% Hyperref dimuat pada akhir preamble oleh ipb-thesis.sty agar urutan paket
+% aman; metadata diisi setelah paket tersebut tersedia.
+\hypersetup{
+  pdfauthor={\NamaPenulis},
+  pdftitle={\JudulSkripsi},
+  pdfsubject={Skripsi Sarjana IPB University -- PPTA 2026},
+  pdfkeywords={IPB, skripsi, tugas akhir, PPTA 2026}
+}
+
+\noindent\ignorespaces
+
+% -----------------------------------------------------------------------------
+% 5. BAGIAN AWAL
+% -----------------------------------------------------------------------------
+% Sampul serta halaman pernyataan/hak cipta tidak masuk hitungan nomor
+% preliminary pada templat resmi.
+\pagenumbering{gobble}
+\pagestyle{frontmatter}
+
+\input{preliminaries/cover}
+\cleardoublepage
+\input{preliminaries/pernyataan}
+\cleardoublepage
+
+% Hitungan Romawi dimulai dari Sorotan (i), tetapi nomornya tidak dicetak.
+\frontmatter
+\pagestyle{frontmatter}
+\input{preliminaries/sorotan}
+\clearpage
+\input{preliminaries/abstrak-grafis}
+\clearpage
+\input{abstract/abstract}
+\clearpage
+\input{preliminaries/tim-penguji}
+\clearpage
+\input{preliminaries/lembar-persetujuan}
+\cleardoublepage
+\input{preliminaries/prakata}
+\cleardoublepage
+\input{preliminaries/daftar-isi}
+
+% -----------------------------------------------------------------------------
+% 6. BAGIAN INTI (BAB) -- Bagian Inti / Pokok
+%    - Nomor halaman: Arab (1, 2, 3, ...), sudut luar atas
+%    - Margin fisik: sisi dalam 4 cm, sisi luar 3 cm, atas/bawah 3 cm
+% -----------------------------------------------------------------------------
+\mainmatter
+\pagestyle{mainmatter}
+
+\input{chapters/chapter-1}    % BAB I   PENDAHULUAN
+\input{chapters/chapter-2}    % BAB II  TINJAUAN PUSTAKA
+\input{chapters/chapter-3}    % BAB III METODE
+\input{chapters/chapter-4}    % BAB IV  HASIL DAN PEMBAHASAN
+\input{chapters/chapter-5}    % BAB V   SIMPULAN DAN SARAN
+
+% -----------------------------------------------------------------------------
+% 7. BAGIAN AKHIR
+%    - Nomor halaman: Arab (lanjut), sudut luar atas
+% -----------------------------------------------------------------------------
+\backmatter
+\pagestyle{mainmatter}
+
+\input{backmatter/daftar-pustaka}
+\input{backmatter/lampiran}
+\input{backmatter/riwayat-hidup}
+
+\end{document}
