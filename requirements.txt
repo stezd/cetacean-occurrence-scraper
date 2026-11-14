@@ -6,6 +6,7 @@ python-dotenv>=1.0.0
 # Data processing & Analysis
 pandas>=2.2.0
 numpy>=1.26.0
+scipy>=1.14.0
 
 # Machine Learning & Modeling (MaxEnt / Tree-based)
 scikit-learn>=1.4.0

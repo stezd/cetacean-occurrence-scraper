@@ -38,3 +38,15 @@ Thumbs.db
 *.fdb_latexmk
 *.synctex.gz
 *.pdf
+
+# Stage 01 runtime data (raw API dumps, scraped media, unverified sheets)
+stages/01_occurrences/raw/
+stages/01_occurrences/input/social_media/media/
+stages/01_occurrences/input/social_media_unverified.csv
+
+# GEBCO / large environmental rasters
+data/gebco/
+*.nc
+*.nc.tmp
+*.tif
+*.tiff
