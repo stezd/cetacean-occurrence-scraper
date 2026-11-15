@@ -67,13 +67,21 @@ digunakan dalam perumusan masalah.
 
 \section{Tujuan}
 
-Berdasarkan rumusan masalah yang telah diuraikan, penelitian ini bertujuan
-untuk:
+Berdasarkan rumusan masalah yang telah diuraikan, penelitian kesesuaian habitat
+hiu paus (\textit{Rhincodon typus}) ini bertujuan untuk:
 
 \begin{enumerate}
-    \item Mengevaluasi dan membandingkan kinerja model % TODO: lengkapi (RM1)
-    % TODO: tujuan 2 (RM2), urutan sama dengan Rumusan Masalah.
-    % Pakai kata kerja terukur; jangan "mengetahui" atau "memahami".
+    \item Mengevaluasi dan membandingkan kinerja model MaxEnt, XGBoost, dan
+    \textit{Random Forest} pada tiga skema pelatihan, yaitu adaptasi domain
+    \textit{Kernel Mean Matching} (KMM) dari Australia ke Indonesia, model
+    lokal Indonesia saja, dan transfer langsung tanpa adaptasi
+    (\textit{naive transfer}), berdasarkan CBI, AUC-ROC, dan TSS melalui
+    validasi silang blok spasial lima lipatan (\textit{spatial block
+    cross-validation}) di perairan Indonesia.
+    \item Mengukur perubahan cakupan relung lingkungan dan ketidakpastian
+    ekstrapolasi lingkungan (MESS) akibat penambahan data media sosial yang
+    diverifikasi pakar pada data repositori terbuka (GBIF dan OBIS) di perairan
+    Indonesia.
 \end{enumerate}
 
 \begin{comment}
