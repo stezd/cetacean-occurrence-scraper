@@ -107,9 +107,46 @@ masyarakat umum. Manfaat dinyatakan dengan kata kerja yang lugas dan logis.
 
 \section{Ruang Lingkup}
 
+Penelitian ini dibatasi pada hal-hal berikut.
+
+\begin{enumerate}
+    \item Penelitian memodelkan kesesuaian habitat satu spesies, yaitu hiu paus
+    (\textit{Rhincodon typus}), di perairan Indonesia sebagai domain target.
+    Perairan Australia digunakan sebagai domain sumber untuk adaptasi domain.
+    \item Data kemunculan berasal dari GBIF dan OBIS pada periode 2010--2026,
+    dengan ketidakpastian koordinat paling besar 10 km, serta data media sosial
+    yang telah diverifikasi pakar. Hanya unggahan berstatus valid yang
+    digunakan. Data media sosial dan berita daring dikumpulkan dari YouTube dan
+    laporan berita daring. Instagram, TikTok, dan X tidak dicakup karena
+    pengumpulan otomatis tidak sesuai dengan ketentuan platform. Data dari
+    iNaturalist dan Sharkbook tidak digunakan dalam penelitian ini.
+    % Opsi 2 (belum dipilih, keputusan 2026-11-16): ganti dua kalimat tentang
+    % Instagram/TikTok/X di atas dengan: "Instagram, TikTok, dan X dicakup
+    % melalui ekspor manual atau API resmi, lalu diverifikasi pakar."
+    % Syarat: ada minimal satu baris valid per platform; jika tidak, platform itu
+    % tidak boleh disebut. API resmi: X berbayar (sekitar 0,005 USD per unggahan),
+    % TikTok Research API tidak tersedia untuk peneliti Indonesia, Instagram
+    % memerlukan verifikasi bisnis dan App Review. Bantuan LLM hanya untuk
+    % penyaringan awal dan ekstraksi kolom; verifikasi tetap oleh pakar.
+    \item Peubah lingkungan berupa suhu permukaan laut, tinggi muka laut,
+    klorofil-a, produksi primer bersih, kedalaman, kemiringan dasar laut, dan
+    jarak ke garis pantai serta isobat 200, 300, dan 500 m, pada resolusi
+    1/12$^{\circ}$ (sekitar 9,2 km). Suhu dasar laut tidak digunakan karena
+    mencerminkan massa air dalam, bukan habitat makan di lapisan permukaan.
+    \item Model yang dibandingkan adalah MaxEnt, XGBoost, dan
+    \textit{Random Forest}, dengan validasi silang blok spasial lima lipatan.
+    \item Musim muson hanya digunakan sebagai pengelompokan data dan peubah
+    dinamis. Penelitian tidak menganalisis pola sebaran musiman.
+    \item MESS hanya mendeteksi nilai di luar rentang satu peubah dan tidak
+    mendeteksi perubahan korelasi atau kombinasi baru antarpeubah
+    \citep{Elith2010}.
+\end{enumerate}
+
+\begin{comment}
 Tugas akhir sering kali dihadapkan pada keterbatasan data, dana, waktu, metode,
 bahkan teori. Oleh karena itu, tugas akhir perlu dengan tegas menunjukkan ruang
 lingkup dengan mempertimbangkan keterbatasan tersebut.
+\end{comment}
 
 \section{Hipotesis}
 
