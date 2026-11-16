@@ -16,6 +16,56 @@ kerangka proses dan rumusan masalah serta pencapaian tujuan tugas akhir.
 
 \section{Latar Belakang}
 
+% DRAF CEPAT 2026-11-16 (disusun asisten atas permintaan penulis untuk pesan
+% Pembimbing 2). Penulis perlu menyunting ke gaya sendiri sebelum naskah akhir.
+% VERIFIKASI: klaim "dilindungi penuh sejak 2013" bersumber dari Herdianti2025;
+% sumber primernya Kepmen KP tahun 2013 (nomor belum dicek).
+Hiu paus (\textit{Rhincodon typus}) merupakan ikan terbesar di dunia dan
+berstatus Terancam (\textit{Endangered}) dalam Daftar Merah IUCN
+\citep{Pierce2016}. Di Indonesia, spesies ini dilindungi penuh sejak 2013
+\citep{Herdianti2025}. Perairan Indonesia memiliki beberapa lokasi agregasi hiu
+paus, antara lain Teluk Cenderawasih, Kaimana, Teluk Saleh, dan Teluk Tomini
+\citep{Putra2026}. Di Bentang Laut Kepala Burung, hampir semua penampakan hiu
+paus selama 2010--2023 tercatat di sekitar bagan \citep{Setyawan2025}.
+
+Kajian habitat hiu paus di Indonesia umumnya berskala lokal dan berfokus pada
+satu lokasi agregasi, misalnya Teluk Cenderawasih
+\citep{Ranintyari2018,Manuhutu2021} dan Teluk Saleh \citep{Herdianti2025}.
+Kajian tersebut menunjukkan bahwa suhu permukaan laut, klorofil-a, dan
+kedalaman berkaitan dengan kemunculan hiu paus. Kajian berskala kepulauan yang
+ada menggunakan data telemetri satelit \citep{Putra2026}. Data kemunculan pada
+repositori terbuka seperti GBIF dan OBIS lebih mudah diakses, tetapi sebarannya
+cenderung mengelompok di lokasi yang sering dikunjungi pengamat. Bias
+pengambilan sampel seperti ini dapat menurunkan kemampuan model sebaran spesies
+untuk diterapkan di luar wilayah pelatihannya \citep{Pili2025}.
+
+Perairan Australia, terutama Ningaloo, memiliki data hiu paus yang lebih rapat
+dari pemantauan jangka panjang dan telemetri satelit. Model habitat berbasis
+telemetri dari Ningaloo memprediksi habitat yang sesuai hingga Laut Timor dan
+perairan Indonesia \citep{Reynolds2017}. Namun, model yang dilatih di satu
+wilayah belum tentu berkinerja baik ketika diterapkan di wilayah lain
+\citep{Sahri2023}, terutama bila wilayah target memiliki kondisi lingkungan
+yang tidak terwakili dalam data pelatihan \citep{Elith2010}. Adaptasi domain
+dengan pembobotan sampel \textit{Kernel Mean Matching} (KMM) menyesuaikan bobot
+data sumber agar sebarannya mendekati sebaran data target. Pada data spasial,
+termasuk data kemunculan tumbuhan, KMM menghasilkan galat pendugaan yang lebih
+rendah daripada model tanpa pembobotan \citep{Serov2026}.
+
+Sumber lain yang dapat mengisi kekosongan data adalah unggahan media sosial dan
+berita daring. Unggahan media sosial telah digunakan untuk mengidentifikasi
+individu hiu paus di Filipina \citep{Araujo2019} dan mencatat kemunculan hiu di
+Yunani \citep{Taklis2020}. Data ini memiliki keterbatasan karena spesies,
+lokasi, dan tanggal tidak selalu dapat dipastikan, sehingga perlu diverifikasi
+\citep{Dehm2025}. Penggabungan data oportunistik dengan data kemunculan lain
+dapat memperbaiki pendugaan sebaran spesies yang datanya jarang dan mengelompok
+\citep{Gonnerman2026}. Perubahan cakupan kondisi lingkungan akibat penambahan
+data dapat dinilai dengan MESS \citep{Elith2010}.
+
+Berdasarkan hal tersebut, penelitian ini memodelkan kesesuaian habitat hiu paus
+di perairan Indonesia dengan memanfaatkan data Australia melalui adaptasi domain
+KMM serta data media sosial yang diverifikasi pakar.
+
+\begin{comment}
 Latar belakang berisi penjelasan alasan memilih topik dan pentingnya kajian
 tugas akhir itu dilakukan berdasarkan alasan teoretis dan praktis, serta
 bagaimana masalah tersebut dapat diatasi dan manfaat dari penyelesaian masalah.
@@ -25,6 +75,7 @@ pemikiran logis. Pemaparan latar belakang harus sistematis, logis, serta
 disertai data, informasi, dan telaah pustaka dari sumber primer, mutakhir, dan
 relevan yang dapat dipertanggungjawabkan secara ilmiah. Masalah penelitian
 yang lebih spesifik dirumuskan pada bagian rumusan masalah.
+\end{comment}
 
 \section{Rumusan Masalah}
 
