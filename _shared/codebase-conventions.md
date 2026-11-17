@@ -20,11 +20,14 @@ python fetch_gbif_cetaceans.py PH 1000
 
 # Verify markdown links and stage contracts across the workspace
 python -I _tools/links.py
+
+# Verify stage outputs: coordinates, study area, thinning, partition conservation, hygiene
+python -I _tools/verify_stages.py
 ```
 
 Output path for the legacy fetcher is **derived, not passed**: `data/cetaceans_<country_code_lowercase>.csv`. `data/cetaceans_id.csv` is a committed generated artifact of the initial Stage 0 *Cetacea* (`taxonKey=733`) exploration, not a hand-maintained source file. Re-running the fetcher overwrites it wholesale — there is no merge or dedupe step, so records that drop out of the GBIF query between runs will silently disappear.
 
-Stage 01 (`stages/01_occurrences/run_stage01.py`) has a `unittest` suite (`stages/01_occurrences/test_stage01.py`), but there is no linter, formatter, or CI configuration in this repo. Verification of a pipeline stage means running its unit tests, running its script, and checking `output/check.md` (plus `python -I _tools/links.py` for documentation integrity).
+Stage 01 (`stages/01_occurrences/run_stage01.py`) has a `unittest` suite (`stages/01_occurrences/test_stage01.py`, plus `test_verify_stages.py` for the verifier itself), but there is no linter, formatter, or CI configuration in this repo. Verification of a pipeline stage means running its unit tests, running its script, checking `output/check.md`, and running `python -I _tools/verify_stages.py` for stage-output integrity (plus `python -I _tools/links.py` for documentation integrity).
 
 ## Stage 01 Architecture (`stages/01_occurrences/run_stage01.py`)
 

@@ -12,7 +12,7 @@ Seasonal habitat suitability modeling pipeline for whale shark (*Rhincodon typus
 | `_shared/` | Factory rules and contracts ([occurrence-pipeline-spec.md](_shared/occurrence-pipeline-spec.md), [codebase-conventions.md](_shared/codebase-conventions.md)) |
 | `literature/` | Converted reference papers ([literature/markdown/README.md](literature/markdown/README.md)); mounted in Obsidian as `Domains/` |
 | `ipb-thesis-latex/` | PPTA IPB 2026 LaTeX thesis/proposal deliverable ([ipb-thesis-latex/CONTEXT.md](ipb-thesis-latex/CONTEXT.md)) |
-| `_tools/` | Workspace utilities (`links.py` link/contract checker, `pdf_to_md.py` PDF converter) |
+| `_tools/` | Workspace utilities (`links.py` link/contract checker, `verify_stages.py` stage-invariant verifier, `pdf_to_md.py` PDF converter) |
 | `_archive/` | Superseded templates (`proposal-aldi/`, `inbox/`) and past presentation runs (`progress-bimbingan/`) |
 
 ## Route by what just happened
@@ -25,10 +25,24 @@ Seasonal habitat suitability modeling pipeline for whale shark (*Rhincodon typus
 | looking up a paper or citation | [literature/markdown/README.md](literature/markdown/README.md) | the paper's `summary.md` |
 | drafting or compiling the IPB thesis/proposal (the author writes the prose; you research, format, cite) | [ipb-thesis-latex/CONTEXT.md](ipb-thesis-latex/CONTEXT.md) "Writing rules" | `ipb-thesis-latex/main.pdf` build check |
 | asked for status or link health | scan `stages/*/output/check.md` and run `python -I _tools/links.py` | report what exists |
+| checking a stage's output for silent corruption or escape hatches | run `python -I _tools/verify_stages.py` | its PASS/FAIL summary (exit `1` on any violation) |
 
 ## Companion Obsidian vault (external)
 
 Working notes live outside git at `C:\Users\Fjontoldesk\Documents\Obsidian Vault\Π Projects\whale-scraper\` (`Thoughts/Research Design.md`, `advise-notes/`, and `Domains/` which junctions into `literature/markdown/`).
+
+## Verify
+
+```bash
+python -I _tools/links.py          # markdown links and stage input contracts
+python -I _tools/verify_stages.py  # stage outputs: coordinates, study area, thinning, partition, hygiene
+```
+
+Both are standard-library only, resolve paths from their own location, and exit non-zero on a
+violation. `verify_stages.py` never writes: it reads `stages/01_occurrences/output/`, checks every
+invariant in [01_occurrences/CONTEXT.md](stages/01_occurrences/CONTEXT.md) "Check", and scans
+`stages/`, `_shared/`, and `_tools/` Python files for escape hatches. A `fail:` status in a stage's
+`check.md` is reported on its own line and is not itself a verifier failure; broken data is.
 
 ## The one rule
 
