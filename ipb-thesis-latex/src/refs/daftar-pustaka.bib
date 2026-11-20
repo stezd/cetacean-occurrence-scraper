@@ -22,6 +22,20 @@
   note      = {Peraturan Rektor IPB Nomor 48 Tahun 2025}
 }
 
+% Penilaian IUCN terbaru. DOI dicek di Crossref 2026-11-21; daftar penulis dari
+% metadata DOI. Menggantikan Pierce2016.
+@misc{Pierce2025,
+  author       = {Pierce, S. J. and Rohner, C. A. and Perry, C. T. and
+                  Jabado, R. W. and Norman, B. and Reynolds, S. and
+                  Womersley, F. and Robinson, D. and Graham, R. and Araujo, G.},
+  year         = {2025},
+  title        = {{\textit{Rhincodon typus}}},
+  howpublished = {The IUCN Red List of Threatened Species 2025},
+  note         = {e.T19488A126673248},
+  doi          = {10.2305/IUCN.UK.2025-2.RLTS.T19488A126673248.en}
+}
+
+% Digantikan Pierce2025. Jangan diacu lagi.
 % VERIFIKASI: ID taksa 19488 dan nomor penilaian 2365291 berasal dari URL
 % IUCN yang diingat, bukan dari halaman resmi (halaman menolak akses otomatis).
 @misc{Pierce2016,
@@ -133,6 +147,105 @@
   url         = {http://repository.ipb.ac.id/handle/123456789/124276}
 }
 
+% --- Hiu paus: model habitat di luar Indonesia --------------------------------
+% Metadata dari Crossref (api.crossref.org), diambil 2026-11-21.
+
+@article{Sequeira2012,
+  author  = {Sequeira, A. and Mellin, C. and Rowat, D. and Meekan, M. G. and
+             Bradshaw, C. J. A.},
+  year    = {2012},
+  title   = {Ocean-scale prediction of whale shark distribution},
+  journal = {Diversity and Distributions},
+  volume  = {18},
+  number  = {5},
+  pages   = {504--518},
+  doi     = {10.1111/j.1472-4642.2011.00853.x}
+}
+
+@article{McKinney2012,
+  author  = {McKinney, J. A. and Hoffmayer, E. R. and Wu, W. and Fulford, R.
+             and Hendon, J.},
+  year    = {2012},
+  title   = {Feeding habitat of the whale shark {\textit{Rhincodon typus}} in
+             the northern {Gulf of Mexico} determined using species
+             distribution modelling},
+  journal = {Marine Ecology Progress Series},
+  volume  = {458},
+  pages   = {199--211},
+  doi     = {10.3354/meps09777}
+}
+
+@article{Sequeira2014,
+  author  = {Sequeira, A. M. M. and Mellin, C. and Fordham, D. A. and
+             Meekan, M. G. and Bradshaw, C. J. A.},
+  year    = {2014},
+  title   = {Predicting current and future global distributions of whale
+             sharks},
+  journal = {Global Change Biology},
+  volume  = {20},
+  number  = {3},
+  pages   = {778--789},
+  doi     = {10.1111/gcb.12343}
+}
+
+@article{Baez2020,
+  author  = {B{\'a}ez, J. C. and Barbosa, A. M. and Pascual, P. and
+             Ramos, M. L. and Abascal, F.},
+  year    = {2020},
+  title   = {Ensemble modeling of the potential distribution of the whale shark
+             in the {Atlantic Ocean}},
+  journal = {Ecology and Evolution},
+  volume  = {10},
+  number  = {1},
+  pages   = {175--184},
+  doi     = {10.1002/ece3.5884}
+}
+
+@article{PetatanRamirez2020,
+  author  = {Petat{\'a}n-Ram{\'i}rez, D. and Whitehead, D. A. and
+             Guerrero-Izquierdo, T. and Ojeda-Ruiz, M. A. and
+             Becerril-Garc{\'i}a, E. E.},
+  year    = {2020},
+  title   = {Habitat suitability of {\textit{Rhincodon typus}} in three
+             localities of the {Gulf of California}: environmental drivers of
+             seasonal aggregations},
+  journal = {Journal of Fish Biology},
+  volume  = {97},
+  number  = {4},
+  pages   = {1177--1186},
+  doi     = {10.1111/jfb.14496}
+}
+
+@article{Milles2025,
+  author  = {Milles, H. M. and Hoffmayer, E. and Arostegui, M. C. and
+             {de la Parra-Venegas}, R. and {Driggers III}, W. B. and
+             Franks, J. S. and Graham, R. T. and Hendon, J. M. and
+             McKinney, J. A. and Olton, M. and Schmidt, J. V. and
+             Robinson Willmott, J. and Lewison, R. L. and Braun, C. D.},
+  year    = {2025},
+  title   = {Characterizing seasonal whale shark habitat in the western
+             {North Atlantic}},
+  journal = {Marine Ecology Progress Series},
+  volume  = {766},
+  pages   = {91--106},
+  doi     = {10.3354/meps14906}
+}
+
+@article{Miller2026,
+  author  = {Miller, I. B. and Niella, Y. and Udyawer, V. and Erdmann, M. V.
+             and Abrantes, K. G. and Pierce, S. J. and Fitzpatrick, R. and
+             Hoopes, L. A. and Dove, A. D. M. and Barnett, A.},
+  year    = {2026},
+  title   = {No model fits all: dynamic ensemble species distribution model
+             reveals seasonal patterns of essential habitat use by ocean giants
+             in the {Southwest Pacific}},
+  journal = {Diversity and Distributions},
+  volume  = {32},
+  number  = {4},
+  pages   = {e70186},
+  doi     = {10.1111/ddi.70186}
+}
+
 % --- Media sosial sebagai sumber data kemunculan -----------------------------
 
 @article{Araujo2019,
@@ -214,6 +327,96 @@
 
 % --- Adaptasi domain dan transferabilitas ------------------------------------
 
+% Paper asli KMM. Dasar pemakaian KMM sebagai pembobot data latih.
+% Metadata dari Crossref (doi MIT Press), diambil 2026-11-21.
+@incollection{Huang2007,
+  author    = {Huang, J. and Smola, A. J. and Gretton, A. and Borgwardt, K. M.
+               and Sch{\"o}lkopf, B.},
+  year      = {2007},
+  title     = {Correcting sample selection bias by unlabeled data},
+  editor    = {Sch{\"o}lkopf, B. and Platt, J. and Hofmann, T.},
+  booktitle = {Advances in Neural Information Processing Systems 19},
+  publisher = {MIT Press},
+  address   = {Cambridge (MA)},
+  pages     = {601--608},
+  doi       = {10.7551/mitpress/7503.003.0080}
+}
+
+% Tinjauan adaptasi domain 2021-2025. Metadata dari Crossref, diambil
+% 2026-11-21 (Lalou2025 dari halaman TMLR/arXiv; TMLR tanpa DOI).
+@article{Zhuang2021,
+  author  = {Zhuang, F. and Qi, Z. and Duan, K. and Xi, D. and Zhu, Y. and
+             Zhu, H. and Xiong, H. and He, Q.},
+  year    = {2021},
+  title   = {A comprehensive survey on transfer learning},
+  journal = {Proceedings of the IEEE},
+  volume  = {109},
+  number  = {1},
+  pages   = {43--76},
+  doi     = {10.1109/JPROC.2020.3004555}
+}
+
+@article{Kouw2021,
+  author  = {Kouw, W. M. and Loog, M.},
+  year    = {2021},
+  title   = {A review of domain adaptation without target labels},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume  = {43},
+  number  = {3},
+  pages   = {766--785},
+  doi     = {10.1109/TPAMI.2019.2945942}
+}
+
+@article{Zhang2024,
+  author  = {Zhang, L. and Gao, X.},
+  year    = {2024},
+  title   = {Transfer adaptation learning: a decade survey},
+  journal = {IEEE Transactions on Neural Networks and Learning Systems},
+  volume  = {35},
+  number  = {1},
+  pages   = {23--44},
+  doi     = {10.1109/TNNLS.2022.3183326}
+}
+
+@article{Lalou2025,
+  author  = {Lalou, Y. and Gnassounou, T. and Collas, A. and
+             {de Mathelin}, A. and Kachaiev, O. and Odonnat, A. and
+             Moreau, T. and Gramfort, A. and Flamary, R.},
+  year    = {2025},
+  title   = {{SKADA-Bench}: benchmarking unsupervised domain adaptation
+             methods with realistic validation on diverse modalities},
+  journal = {Transactions on Machine Learning Research},
+  url     = {https://openreview.net/forum?id=k9F63DV3Qe},
+  urldate = {2026-11-21}
+}
+
+@article{Saigusa2026,
+  author  = {Saigusa, Y. and Komori, O. and Eguchi, S.},
+  year    = {2026},
+  title   = {Improving transferability of species distribution models in a
+             {Poisson} point-process framework},
+  journal = {Ecological Modelling},
+  volume  = {516},
+  pages   = {111534},
+  doi     = {10.1016/j.ecolmodel.2026.111534}
+}
+
+@article{Patterson2025,
+  author  = {Patterson, C. R. and Zheng, X. and Foster, S. D. and
+             Helmstedt, K. J.},
+  year    = {2025},
+  title   = {Transferring species distribution models to understudied systems:
+             does data integration help?},
+  journal = {Methods in Ecology and Evolution},
+  volume  = {16},
+  number  = {12},
+  pages   = {3008--3021},
+  doi     = {10.1111/2041-210x.70178}
+}
+
+% Catatan: Serov2026 memakai KMM untuk estimasi galat (risk estimation), bukan
+% untuk melatih model. Acu hanya untuk kestabilan bobot KMM dibanding KDE.
+
 @article{Serov2026,
   author  = {Serov, E. and Koldasbayeva, D. and Zaytsev, A.},
   year    = {2026},
@@ -283,6 +486,95 @@
 }
 
 % --- Validasi dan praktik pemodelan sebaran ----------------------------------
+
+% Metrik keberhasilan (drafts/metrik-keberhasilan.md). Metadata dari Crossref,
+% diambil 2026-11-21.
+@article{Leroy2018,
+  author  = {Leroy, B. and Delsol, R. and Hugueny, B. and Meynard, C. N. and
+             Barhoumi, C. and Barbet-Massin, M. and Bellard, C.},
+  year    = {2018},
+  title   = {Without quality presence--absence data, discrimination metrics
+             such as {TSS} can be misleading measures of model performance},
+  journal = {Journal of Biogeography},
+  volume  = {45},
+  number  = {9},
+  pages   = {1994--2002},
+  doi     = {10.1111/jbi.13402}
+}
+
+@article{MeyerPebesma2021,
+  author  = {Meyer, H. and Pebesma, E.},
+  year    = {2021},
+  title   = {Predicting into unknown space? {E}stimating the area of
+             applicability of spatial prediction models},
+  journal = {Methods in Ecology and Evolution},
+  volume  = {12},
+  number  = {9},
+  pages   = {1620--1633},
+  doi     = {10.1111/2041-210X.13650}
+}
+
+@article{Velazco2024,
+  author  = {Velazco, S. J. E. and Rose, M. B. and {De Marco}, P. and
+             Regan, H. M. and Franklin, J.},
+  year    = {2024},
+  title   = {How far can {I} extrapolate my species distribution model?
+             {E}xploring shape, a novel method},
+  journal = {Ecography},
+  volume  = {2024},
+  number  = {3},
+  pages   = {e06992},
+  doi     = {10.1111/ecog.06992}
+}
+
+@article{Moore2024,
+  author  = {Moore, R. A. and Symonds, M. R. E. and Howard, S. R.},
+  year    = {2024},
+  title   = {Leveraging social media and community science data for
+             environmental niche models: a case study with native {Australian}
+             bees},
+  journal = {Ecological Informatics},
+  volume  = {84},
+  pages   = {102857},
+  doi     = {10.1016/j.ecoinf.2024.102857}
+}
+
+@article{Liu2025,
+  author  = {Liu, C. and Newell, G. and White, M. and MacHunter, J.},
+  year    = {2025},
+  title   = {Improving the estimation of the {Boyce} index using statistical
+             smoothing methods for evaluating species distribution models with
+             presence-only data},
+  journal = {Ecography},
+  volume  = {2025},
+  number  = {1},
+  pages   = {e07218},
+  doi     = {10.1111/ecog.07218}
+}
+
+@article{Schumacher2025,
+  author  = {Schumacher, F. L. and Knoth, C. and Ludwig, M. and Meyer, H.},
+  year    = {2025},
+  title   = {Estimation of local training data point densities to support the
+             assessment of spatial prediction uncertainty},
+  journal = {Geoscientific Model Development},
+  volume  = {18},
+  number  = {24},
+  pages   = {10185--10202},
+  doi     = {10.5194/gmd-18-10185-2025}
+}
+
+@article{Matsui2026,
+  author  = {Matsui, T.},
+  year    = {2026},
+  title   = {Assessing the transferability of species distribution models: a
+             cross-continental evaluation},
+  journal = {Ecology and Evolution},
+  volume  = {16},
+  number  = {5},
+  pages   = {e73534},
+  doi     = {10.1002/ece3.73534}
+}
 
 @article{Pili2025,
   author  = {Pili, A. N. and Leroy, B. and Zurell, D.},

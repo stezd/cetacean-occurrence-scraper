@@ -441,12 +441,26 @@
   \printtext{Di dalam\addcolon\space}%
   \printnames{editor}\setunit{\addcomma\space}\printtext{editor}%
   \setunit{\addperiod\space}\printfield{booktitle}%
-  \setunit{\addperiod\space}\printlist{publisher}%
+  \setunit{\addperiod\space}\printlist{location}%
+  \setunit{\addcolon\space}\printlist{publisher}%
   \iffieldundef{pages}{}{\setunit{\addperiod\space}\printtext{hlm\space}\printfield{pages}}%
+  \setunit{\addperiod\space}\usebibmacro{ipb:doi-or-url}%
   \usebibmacro{finentry}%
 }
 \DeclareBibliographyAlias{inbook}{incollection}
 \DeclareBibliographyAlias{inproceedings}{incollection}
+
+% Sumber lain, misalnya penilaian Daftar Merah IUCN.
+\DeclareBibliographyDriver{misc}{%
+  \usebibmacro{bibindex}\usebibmacro{begentry}%
+  \usebibmacro{ipb:author}\setunit{\addperiod\space}%
+  \usebibmacro{ipb:year}\setunit{\addperiod\space}%
+  \printfield{title}\setunit{\addperiod\space}%
+  \printfield{howpublished}\setunit{\addperiod\space}%
+  \printfield{note}\setunit{\addperiod\space}%
+  \usebibmacro{ipb:doi-or-url}%
+  \usebibmacro{finentry}%
+}
 
 \setlength{\bibitemsep}{0pt}
 \setlength{\bibhang}{1cm}
