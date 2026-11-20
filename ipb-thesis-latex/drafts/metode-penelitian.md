@@ -27,17 +27,20 @@ Draf 2026-11-17. Ringkasan alur kerja, bukan teks Bab III. Sumber: `PROJECT_OVER
 ## 3. Pemodelan
 
 - **Algoritma:** MaxEnt, XGBoost, dan Random Forest.
-- **Tiga skema pelatihan:**
+- **Empat skema pelatihan** (skema 4 ditambahkan 2026-11-21):
   1. Lokal: data Indonesia saja.
   2. Transfer langsung: data Australia tanpa pembobotan, diproyeksikan ke Indonesia.
-  3. Adaptasi domain: data Australia dibobot dengan KMM agar sebaran peubahnya mendekati Indonesia, lalu digabung dengan data Indonesia.
+  3. Adaptasi domain: data Australia dibobot dengan KMM agar sebaran peubahnya mendekati Indonesia, lalu digabung dengan data Indonesia (Huang et al. 2007).
+  4. Subsampling lingkungan: data Australia dan Indonesia ditipiskan di ruang lingkungan, tanpa pembobotan (Pili et al. 2025). Metode persisnya (pengelompokan lingkungan atau penipisan jarak lingkungan) belum dipilih.
+- **Asumsi KMM:** hubungan spesies-lingkungan sama di kedua domain, dan kondisi Indonesia berada di dalam jangkauan kondisi Australia (Huang et al. 2007). MESS menunjukkan di mana asumsi kedua dilanggar.
 - **Perbandingan data:** GBIF + OBIS dibandingkan dengan GBIF + OBIS + media sosial terverifikasi.
 
 ## 4. Evaluasi
 
 - **Validasi:** validasi silang blok spasial 5 lipatan (blok 250 km) pada data Indonesia.
-- **Metrik kinerja (Tujuan 1):** CBI (utama), AUC-ROC, dan TSS.
-- **Cakupan relung dan ekstrapolasi (Tujuan 2):** perubahan cakupan relung lingkungan dan peta MESS sebelum dan sesudah penambahan data media sosial.
+- **Tujuan 1 (diperbarui 2026-11-21):** ukuran utama ΔCBI = CBI(skema) − CBI(model lokal) per lipatan, dengan CBI berpemulusan karena titik uji sedikit (Liu et al. 2025). AUC-ROC dan TSS sebagai pelengkap (Leroy et al. 2018). Diagnostik KMM: MMD sebelum dan sesudah pembobotan, serta jumlah sampel efektif bobot.
+- **Tujuan 2 (diperbarui 2026-11-21):** ukuran utama persentase luas perairan Indonesia di dalam AOA (Meyer & Pebesma 2021). Pendukung: LPD (Schumacher et al. 2025), luas MESS < 0, dan sel unik spasial. Pengaman: ΔCBI dengan dan tanpa media sosial pada lipatan uji GBIF/OBIS yang sama tidak boleh turun.
+- **Rincian:** lihat `drafts/metrik-keberhasilan.md`.
 
 ## Catatan
 
