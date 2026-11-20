@@ -25,7 +25,7 @@ kerangka proses dan rumusan masalah serta pencapaian tujuan tugas akhir.
 % sumber primernya Kepmen KP tahun 2013 (nomor belum dicek).
 Hiu paus (\textit{Rhincodon typus}) merupakan ikan terbesar di dunia dan
 berstatus Terancam (\textit{Endangered}) dalam Daftar Merah IUCN
-\citep{Pierce2016}. Di Indonesia, spesies ini dilindungi penuh sejak 2013
+\citep{Pierce2025}. Di Indonesia, spesies ini dilindungi penuh sejak 2013
 \citep{Herdianti2025}. Perairan Indonesia memiliki beberapa lokasi agregasi hiu
 paus, antara lain Teluk Cenderawasih, Kaimana, Teluk Saleh, dan Teluk Tomini
 \citep{Putra2026}. Di Bentang Laut Kepala Burung, hampir semua penampakan hiu
@@ -84,17 +84,18 @@ Berdasarkan latar belakang tersebut, rumusan masalah dalam penelitian ini adalah
 sebagai berikut:
 
 \begin{enumerate}
-    \item Bagaimana kinerja adaptasi domain berbasis pembobotan sampel
-    \textit{Kernel Mean Matching} (KMM) dari domain sumber Australia ke domain
-    target Indonesia pada pemodelan kesesuaian habitat hiu paus
-    (\textit{Rhincodon typus}) menggunakan MaxEnt, XGBoost, dan
-    \textit{Random Forest} dibandingkan dengan model lokal Indonesia saja dan
-    transfer langsung tanpa adaptasi (\textit{naive transfer})?
-    \item Sejauh mana pengayaan data repositori terbuka (GBIF dan OBIS) dengan
-    data kemunculan media sosial yang telah diverifikasi pakar memperluas
-    cakupan relung lingkungan dan menurunkan ketidakpastian ekstrapolasi
-    lingkungan (\textit{Multivariate Environmental Similarity Surface} / MESS)
-    di perairan Indonesia?
+    % Revisi 2026-11-21 (arah B, disetujui penulis): RM1 berfokus pada pengaruh
+    % data Australia dengan empat skema; RM2 memuat syarat kinerja tidak turun.
+    \item Bagaimana pengaruh pemanfaatan data kemunculan hiu paus
+    (\textit{Rhincodon typus}) dari perairan Australia terhadap kinerja model
+    kesesuaian habitat di perairan Indonesia apabila data tersebut digunakan
+    melalui transfer langsung, adaptasi domain \textit{Kernel Mean Matching}
+    (KMM), dan \textit{subsampling} lingkungan, dibandingkan dengan model yang
+    hanya dilatih dengan data Indonesia?
+    \item Sejauh mana penambahan data kemunculan dari media sosial dan berita
+    daring yang telah diverifikasi pakar memperluas cakupan lingkungan model
+    kesesuaian habitat hiu paus di perairan Indonesia tanpa menurunkan kinerja
+    model?
     % Keputusan 2026-11-14: RM3 (pola musiman) dikeluarkan dari ruang lingkup.
     % Musim (NWM/TR1/SEM/TR2) tetap dipakai sebagai irisan data pada metode,
     % tetapi tidak menjadi tujuan penelitian dan tidak boleh dijanjikan di Tujuan.
@@ -123,17 +124,17 @@ Berdasarkan rumusan masalah yang telah diuraikan, penelitian kesesuaian habitat
 hiu paus (\textit{Rhincodon typus}) ini bertujuan untuk:
 
 \begin{enumerate}
-    \item Mengevaluasi dan membandingkan kinerja model MaxEnt, XGBoost, dan
-    \textit{Random Forest} pada tiga skema pelatihan, yaitu adaptasi domain
-    \textit{Kernel Mean Matching} (KMM) dari Australia ke Indonesia, model
-    lokal Indonesia saja, dan transfer langsung tanpa adaptasi
-    (\textit{naive transfer}), berdasarkan CBI, AUC-ROC, dan TSS melalui
-    validasi silang blok spasial lima lipatan (\textit{spatial block
-    cross-validation}) di perairan Indonesia.
-    \item Mengukur perubahan cakupan relung lingkungan dan ketidakpastian
-    ekstrapolasi lingkungan (MESS) akibat penambahan data media sosial yang
-    diverifikasi pakar pada data repositori terbuka (GBIF dan OBIS) di perairan
-    Indonesia.
+    \item Membandingkan kinerja model kesesuaian habitat hiu paus di perairan
+    Indonesia pada empat skema pelatihan, yaitu model lokal Indonesia, transfer
+    langsung dari Australia, adaptasi domain KMM, dan \textit{subsampling}
+    lingkungan, menggunakan algoritme MaxEnt, XGBoost, dan \textit{Random
+    Forest}. Kinerja diukur dengan indeks Boyce kontinu sebagai ukuran utama
+    serta AUC-ROC dan TSS sebagai ukuran pelengkap, melalui validasi silang
+    blok spasial lima lipatan (\textit{spatial block cross-validation}).
+    \item Mengukur perubahan luas \textit{area of applicability} (AOA), luas
+    wilayah ekstrapolasi MESS (\textit{Multivariate Environmental Similarity
+    Surface}), dan indeks Boyce kontinu model di perairan Indonesia akibat
+    penambahan data media sosial terverifikasi pada data GBIF dan OBIS.
 \end{enumerate}
 
 \begin{comment}
@@ -186,12 +187,15 @@ Penelitian ini dibatasi pada hal-hal berikut.
     1/12$^{\circ}$ (sekitar 9,2 km). Suhu dasar laut tidak digunakan karena
     mencerminkan massa air dalam, bukan habitat makan di lapisan permukaan.
     \item Model yang dibandingkan adalah MaxEnt, XGBoost, dan
-    \textit{Random Forest}, dengan validasi silang blok spasial lima lipatan.
+    \textit{Random Forest} pada empat skema pelatihan (lokal Indonesia,
+    transfer langsung, KMM, dan \textit{subsampling} lingkungan), dengan
+    validasi silang blok spasial lima lipatan.
     \item Musim muson hanya digunakan sebagai pengelompokan data dan peubah
     dinamis. Penelitian tidak menganalisis pola sebaran musiman.
-    \item MESS hanya mendeteksi nilai di luar rentang satu peubah dan tidak
-    mendeteksi perubahan korelasi atau kombinasi baru antarpeubah
-    \citep{Elith2010}.
+    \item Cakupan lingkungan diukur terutama dengan AOA
+    \citep{MeyerPebesma2021}. MESS menjadi ukuran pendukung karena hanya
+    mendeteksi nilai di luar rentang satu peubah dan tidak mendeteksi
+    perubahan korelasi atau kombinasi baru antarpeubah \citep{Elith2010}.
 \end{enumerate}
 
 \begin{comment}
@@ -202,7 +206,21 @@ lingkup dengan mempertimbangkan keterbatasan tersebut.
 
 \section{Hipotesis}
 
+\begin{comment}
 Hipotesis dapat ditulis secara eksplisit atau tersirat sesuai bidang ipteks yang
 relevan. Hipotesis dapat menjadi bagian dari pendahuluan (untuk bidang sains,
 teknik, dan kesehatan), atau merupakan bagian akhir dari tinjauan pustaka
 (untuk bidang sosial, ekonomi, dan humaniora).
+\end{comment}
+
+Hipotesis penelitian ini adalah sebagai berikut:
+
+\begin{enumerate}
+    \item Pemanfaatan data Australia meningkatkan indeks Boyce kontinu model di
+    perairan Indonesia dibandingkan model lokal, dan peningkatan dari KMM lebih
+    besar pada MaxEnt daripada pada XGBoost dan \textit{Random Forest}
+    \citep{Lalou2025}.
+    \item Penambahan data media sosial terverifikasi memperluas AOA dan
+    mempersempit wilayah ekstrapolasi MESS tanpa menurunkan indeks Boyce
+    kontinu.
+\end{enumerate}
