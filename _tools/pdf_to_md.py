@@ -7,6 +7,7 @@ Image links in the Markdown are rewritten to be relative to the .md file.
 """
 
 import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -15,7 +16,12 @@ import pymupdf4llm
 
 def convert(pdf: Path, out_root: Path) -> None:
     out_dir = out_root / pdf.stem
-    img_dir = out_dir / "images"
+    # pymupdf4llm rewrites spaces and parentheses in the image path, so a
+    # name like "Author (2023) - Title" fails. Work in an ASCII-safe folder,
+    # then rename it to the real stem when the conversion ends.
+    safe = re.sub(r"[^A-Za-z0-9]+", "_", pdf.stem).strip("_")
+    work_dir = out_root / f"_work_{safe}"
+    img_dir = work_dir / "images"
     img_dir.mkdir(parents=True, exist_ok=True)
     md = pymupdf4llm.to_markdown(
         str(pdf),
@@ -32,7 +38,11 @@ def convert(pdf: Path, out_root: Path) -> None:
         return f"{m.group(1)}(images/{name})"
 
     md = re.sub(r"(!\[[^\]]*\])\(([^)]+)\)", fix, md)
-    (out_dir / f"{pdf.stem}.md").write_text(md, encoding="utf-8")
+    (work_dir / f"{pdf.stem}.md").write_text(md, encoding="utf-8")
+    if out_dir.exists():
+        shutil.rmtree(out_dir)
+    work_dir.rename(out_dir)
+    img_dir = out_dir / "images"
     n_links = len(re.findall(r"!\[[^\]]*\]\(images/", md))
     n_files = len(list(img_dir.glob("*.png")))
     print(f"{pdf.name}: {len(md)} chars, {n_links} image links, {n_files} image files")
