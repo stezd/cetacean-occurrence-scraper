@@ -191,15 +191,17 @@ jumlah titik, sel kisi unik, luas sebaran, atau perubahan prediksi. Namun,
 kajian-kajian tersebut tidak mengukur sejauh mana catatan tambahan memperluas
 cakupan lingkungan model kesesuaian habitat sambil mempertahankan kinerjanya.
 
-% DRAF P7 (Gemini Neon, 2026-11-21): sunting ke gaya sendiri.
-Berdasarkan uraian tersebut, penelitian ini membandingkan model kesesuaian
-habitat hiu paus di perairan Indonesia yang hanya dilatih dengan data
-Indonesia dengan skema yang memanfaatkan data Australia. Skema pemanfaatan data
-Australia tersebut mencakup transfer langsung, adaptasi domain \textit{Kernel
-Mean Matching} (KMM) berbasis pembobotan sampel, dan \textit{subsampling}
-lingkungan. Penelitian ini juga menguji apakah penambahan data kemunculan dari
-YouTube dan berita daring yang telah diverifikasi pakar memperluas cakupan
-lingkungan model tanpa menurunkan kinerjanya.
+% DRAF P7 (revisi 2026-11-22 dari tinjauan empat reviewer): sunting ke gaya
+% sendiri. P7 merangkum masalah; rincian pertanyaan ada di Rumusan Masalah.
+Berdasarkan uraian tersebut, data kemunculan hiu paus di Indonesia yang sedikit
+dan mengelompok dapat ditambah dari dua sumber, yaitu data Australia dan data
+kemunculan dari YouTube dan berita daring yang diverifikasi pakar. Data
+Australia berasal dari kondisi lingkungan yang berbeda, sehingga manfaatnya
+bergantung pada cara perbedaan tersebut ditangani. Data dari YouTube dan berita
+daring dapat memperluas cakupan lingkungan, tetapi perluasan tersebut perlu
+dinilai bersama kinerja model. Oleh karena itu, kedua sumber data diuji
+terhadap model lokal, yaitu model yang hanya dilatih dengan data Indonesia,
+menggunakan indeks Boyce kontinu pada validasi silang blok spasial.
 
 \begin{comment}
 Hiu paus (\textit{Rhincodon typus}) merupakan ikan terbesar di dunia dan
@@ -262,18 +264,18 @@ Berdasarkan latar belakang tersebut, rumusan masalah dalam penelitian ini adalah
 sebagai berikut:
 
 \begin{enumerate}
-    % Revisi 2026-11-21 (arah B, disetujui penulis): RM1 berfokus pada pengaruh
-    % data Australia dengan empat skema; RM2 memuat syarat kinerja tidak turun.
-    \item Bagaimana pengaruh pemanfaatan data kemunculan hiu paus
-    (\textit{Rhincodon typus}) dari perairan Australia terhadap kinerja model
-    kesesuaian habitat di perairan Indonesia apabila data tersebut digunakan
-    melalui transfer langsung, adaptasi domain \textit{Kernel Mean Matching}
-    (KMM), dan \textit{subsampling} lingkungan, dibandingkan dengan model yang
-    hanya dilatih dengan data Indonesia?
-    \item Sejauh mana penambahan data kemunculan dari media sosial dan berita
-    daring yang telah diverifikasi pakar memperluas cakupan lingkungan model
-    kesesuaian habitat hiu paus di perairan Indonesia tanpa menurunkan kinerja
-    model?
+    % Revisi 2026-11-22 (disetujui penulis): RM dibuat netral. Syarat "kinerja
+    % tidak turun" pindah ke Hipotesis 2 dengan margin delta (ditetapkan di Bab
+    % III). RM1 menyebut algoritme karena Hipotesis 1 membandingkannya.
+    \item Bagaimana kinerja model kesesuaian habitat hiu paus di perairan
+    Indonesia apabila data kemunculan dari Australia dimanfaatkan melalui
+    transfer langsung, adaptasi domain \textit{Kernel Mean Matching} (KMM), dan
+    \textit{subsampling} lingkungan, dibandingkan dengan model lokal, pada
+    algoritme MaxEnt, XGBoost, dan \textit{Random Forest}?
+    \item Bagaimana perubahan cakupan lingkungan dan kinerja model kesesuaian
+    habitat hiu paus di perairan Indonesia apabila data GBIF dan OBIS ditambah
+    dengan data kemunculan dari YouTube dan berita daring yang telah
+    diverifikasi pakar?
     % Keputusan 2026-11-14: RM3 (pola musiman) dikeluarkan dari ruang lingkup.
     % Musim (NWM/TR1/SEM/TR2) tetap dipakai sebagai irisan data pada metode,
     % tetapi tidak menjadi tujuan penelitian dan tidak boleh dijanjikan di Tujuan.
@@ -312,7 +314,8 @@ hiu paus (\textit{Rhincodon typus}) ini bertujuan untuk:
     \item Mengukur perubahan luas \textit{area of applicability} (AOA), luas
     wilayah ekstrapolasi MESS (\textit{Multivariate Environmental Similarity
     Surface}), dan indeks Boyce kontinu model di perairan Indonesia akibat
-    penambahan data media sosial terverifikasi pada data GBIF dan OBIS.
+    penambahan data kemunculan dari YouTube dan berita daring yang telah
+    diverifikasi pakar ke dalam data GBIF dan OBIS.
 \end{enumerate}
 
 \begin{comment}
@@ -394,11 +397,17 @@ teknik, dan kesehatan), atau merupakan bagian akhir dari tinjauan pustaka
 Hipotesis penelitian ini adalah sebagai berikut:
 
 \begin{enumerate}
-    \item Pemanfaatan data Australia meningkatkan indeks Boyce kontinu model di
-    perairan Indonesia dibandingkan model lokal, dan peningkatan dari KMM lebih
-    besar pada MaxEnt daripada pada XGBoost dan \textit{Random Forest}
-    \citep{Lalou2025}.
-    \item Penambahan data media sosial terverifikasi memperluas AOA dan
-    mempersempit wilayah ekstrapolasi MESS tanpa menurunkan indeks Boyce
-    kontinu.
+    % Revisi 2026-11-22: transfer langsung tidak ikut diduga meningkat karena
+    % P4 menyatakan data Australia tidak dapat digunakan begitu saja.
+    \item Pemanfaatan data Australia melalui KMM dan \textit{subsampling}
+    lingkungan meningkatkan indeks Boyce kontinu model di perairan Indonesia
+    dibandingkan model lokal, dan peningkatan dari KMM lebih besar pada MaxEnt
+    daripada pada XGBoost dan \textit{Random Forest} \citep{Lalou2025}.
+    \item Penambahan data kemunculan dari YouTube dan berita daring yang telah
+    diverifikasi pakar memperluas AOA dan mempersempit wilayah ekstrapolasi
+    MESS dengan penurunan indeks Boyce kontinu tidak lebih dari batas
+    $\delta$ yang ditetapkan pada Bab~III.
+    % TODO Bab III: tetapkan delta dan uji berpasangan per lipatan, prosedur
+    % deduplikasi YouTube/berita terhadap GBIF/OBIS, dan jumlah minimum titik
+    % uji per lipatan. Akui bahwa CBI tidak menilai wilayah baru tanpa titik uji.
 \end{enumerate}
