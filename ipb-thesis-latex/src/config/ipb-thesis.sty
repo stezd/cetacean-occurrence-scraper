@@ -37,6 +37,11 @@
   }
 \fi
 \RequirePackage[main=indonesian,english,provide=*]{babel}
+% Spasi tunggal setelah titik akhir kalimat, sesuai tipografi Indonesia.
+% Dipasang ulang di awal dokumen karena babel dapat mengubahnya saat memilih
+% bahasa.
+\frenchspacing
+\AtBeginDocument{\frenchspacing}
 
 % -----------------------------------------------------------------------------
 % 2. Kertas, margin, spasi, dan paragraf
