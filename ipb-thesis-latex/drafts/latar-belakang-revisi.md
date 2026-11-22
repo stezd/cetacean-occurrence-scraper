@@ -64,6 +64,7 @@ Pola yang terlihat: data berasal dari telemetri, logbook perikanan, atau penampa
 | Integrasi beberapa sumber data | Kurangnya data di target | Ya | Patterson et al. 2025, Gonnerman 2026 |
 
 - Kenapa KMM, bukan KDE: pembobotan KDE meledak pada data yang mengelompok, KMM stabil (Serov 2026). **Ini satu-satunya peran Serov di P5.**
+- **Celah dari penulis paper itu sendiri (Saigusa et al. 2026):** pembobotan untuk transfer SDM baru diuji dengan uLSIF; penulisnya menyebut KMM sebagai alternatif yang belum diuji. Manfaat pembobotan lebih besar saat pergeseran kuat dan data kemunculan sedikit, dua kondisi yang cocok dengan kasus hiu paus Australia ke Indonesia. Rata-rata perbaikannya kecil (AUC 0,633 vs 0,635 pada 78 spesies), sejalan dengan Lalou et al. 2025.
 - Asumsi KMM: hubungan spesies-lingkungan sama di kedua domain, dan kondisi target berada di dalam jangkauan sumber (Kouw & Loog 2021). MESS menunjukkan di mana asumsi kedua dilanggar (Elith 2010).
 - Ekspektasi yang jujur: pada uji realistis, pembobotan (termasuk KMM) sering hanya memberi perbaikan kecil, terutama untuk model kompleks, tetapi jarang memperburuk hasil (Lalou et al. 2025). Pembobotan cocok untuk pergeseran sedang (Zhang & Gao 2024).
 

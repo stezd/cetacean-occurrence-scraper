@@ -16,7 +16,7 @@ Draf 2026-11-21. Bahan untuk penulis, bukan teks skripsi. Arah RM: data Indonesi
 | Estimasi CBI | CBI dengan pemulusan statistik | Dipakai karena okurensi Indonesia per lipatan sedikit; CBI cara biasa bias saat titik uji sedikit | Liu et al. 2025 |
 | Pelengkap | AUC-ROC dan TSS | Arah perubahan sama dengan CBI | Leroy et al. 2018 (keterbatasannya) |
 | Pelengkap | Korelasi prediksi model transfer dengan prediksi model lokal Indonesia (RWIP) | Korelasi tinggi berarti transfer menghasilkan pola yang mirip dengan model yang dikalibrasi di Indonesia | Matsui 2026 |
-| Diagnostik KMM | Jumlah sampel efektif bobot (ESS) dan MMD sebelum dan sesudah pembobotan | MMD turun tanpa ESS jatuh terlalu rendah | Kouw & Loog 2021 (varians bobot) |
+| Diagnostik KMM | Jumlah sampel efektif bobot (ESS), MMD, dan beda rata-rata terstandar (SMD) tiap peubah sebelum dan sesudah pembobotan | MMD dan SMD turun tanpa ESS jatuh terlalu rendah | Kouw & Loog 2021 (varians bobot); Saigusa et al. 2026 (SMD dan ESS) |
 
 Catatan:
 - Bandingkan semua strategi terhadap **model lokal**, karena pertanyaannya "apakah data Australia membantu", bukan "strategi mana yang tertinggi".

@@ -19,10 +19,188 @@ kerangka proses dan rumusan masalah serta pencapaian tujuan tugas akhir.
 
 \section{Latar Belakang}
 
-% DRAF CEPAT 2026-11-16 (disusun asisten atas permintaan penulis untuk pesan
-% Pembimbing 2). Penulis perlu menyunting ke gaya sendiri sebelum naskah akhir.
-% VERIFIKASI: klaim "dilindungi penuh sejak 2013" bersumber dari Herdianti2025;
-% sumber primernya Kepmen KP tahun 2013 (nomor belum dicek).
+% Dicek 2026-11-21 di justifikasi asesmen IUCN (species/19488/126673248/pdf):
+% "a population reduction of 50-79% was inferred over the last three
+% generations (120 years). Therefore, the species is assessed as Endangered
+% A2bd." Indo-Pasifik: penurunan >65%; Atlantik: >=30%.
+
+Populasi hiu paus (\textit{Rhincodon typus}) global diperkirakan turun 50--79\%
+dalam tiga generasi terakhir (120 tahun), sehingga spesies ini berstatus
+\textit{Endangered} dalam Daftar Merah IUCN \citep{Pierce2025}. Di
+Indo-Pasifik, wilayah tempat perairan Indonesia berada, penurunan populasi
+lebih dari 65\%, sedangkan di Atlantik sedikitnya 30\% \citep{Pierce2025}. Hiu
+paus dapat mencapai panjang total 18--20 m, mampu bergerak jauh di samudra
+tropis dan subtropis hangat, dan terutama terancam oleh tangkapan sampingan
+jaring perikanan serta tabrakan dengan kapal \citep{Pierce2025}. Perlindungan di lokasi agregasi belum cukup karena
+pergerakan hiu paus melampaui kawasan yang dikelola dan banyak habitat berada di
+luar area konservasi \citep{Reynolds2017,Putra2026}. Oleh karena itu,
+pengelolaan membutuhkan peta habitat yang sesuai. Peta seperti ini dapat
+disusun dengan model kesesuaian habitat \citep{Putra2026}.
+
+Model kesesuaian habitat hiu paus telah dibangun di berbagai wilayah, dengan
+data dari telemetri, \textit{logbook} perikanan, atau penampakan yang
+dilaporkan masyarakat \citep{Reynolds2017,Sequeira2014,Milles2025}. Di
+Australia Barat, \citet{Reynolds2017} memodelkan habitat hiu paus dari data
+telemetri hiu yang ditandai di Ningaloo selama 2010--2016. Model yang
+digunakan adalah model aditif campuran (GAMM) dengan peubah kedalaman, suhu
+permukaan laut, dan klorofil-a. Model tersebut memprediksi habitat yang sesuai
+hingga Laut Timor dan perairan Indonesia.
+% DRAF ASISTEN 2026-11-21 (diminta penulis): mulai kalimat Miller sampai akhir
+% paragraf. Sunting ke gaya sendiri.
+Di perairan timur Australia hingga Pasifik barat daya, \citet{Miller2026}
+membangun model ensembel dari data telemetri hiu paus muda. Kinerja model
+tersebut tinggi pada data latih (AUC 0,98), tetapi turun menjadi 0,65--0,69
+ketika diuji dengan validasi silang blok spasial. Pada skala samudra, data
+pengamatan dari kapal pukat cincin tuna telah digunakan untuk memodelkan
+sebaran hiu paus di Samudra Atlantik \citep{Baez2020} serta di Samudra
+Atlantik, Hindia, dan Pasifik sekaligus \citep{Sequeira2014}. Kajian global
+tersebut menemukan bahwa pengaruh peubah lingkungan terhadap kemunculan hiu
+paus sedikit berbeda antarsamudra \citep{Sequeira2014}. Data penampakan dari
+basis data terbuka dan laporan masyarakat juga telah digunakan, antara lain di
+Teluk California \citep{PetatanRamirez2020} dan Atlantik barat laut
+\citep{Milles2025}. Kajian-kajian tersebut dibangun di wilayah dengan
+ketersediaan data yang tinggi, yaitu wilayah dengan telemetri jangka panjang,
+catatan perikanan selama puluhan tahun, atau penampakan yang intensif.
+Perairan Indonesia hanya muncul sebagai wilayah proyeksi model Australia, tanpa
+data kemunculan dari Indonesia untuk menguji hasilnya \citep{Reynolds2017}.
+
+% DRAF P3 (Gemini Neon, 2026-11-21, dirapikan asisten Claude Opus 5.5): sunting ke gaya sendiri.
+Berbeda dari wilayah-wilayah tersebut, kajian hiu paus di Asia Tenggara umumnya
+berskala lokal, berfokus pada satu lokasi agregasi, dan tidak semuanya berupa
+model habitat. Di Filipina, \citet{Araujo2019} mengidentifikasi individu hiu
+paus di Teluk Honda, Palawan, melalui identifikasi citra dan penanda satelit
+tanpa membangun model habitat. Kajian tersebut menunjukkan bahwa hiu paus
+melintasi batas negara. Seekor hiu yang mula-mula tercatat di Kalimantan Timur,
+Indonesia, terlihat kembali di Teluk Honda sekitar 3,5 tahun kemudian. Hiu
+bertanda lain mencapai Sabah, Malaysia, lalu kembali \citep{Araujo2019}. Di
+Indonesia, kajian di Teluk Cenderawasih menerapkan GAM pada data 2012--2015
+\citep{Ranintyari2018} dan 2019--2020 \citep{Manuhutu2021}. Kajian lain di
+teluk yang sama meneliti populasi hiu paus serta suhu dan salinitas perairan
+\citep{Adriani2023}. Di Teluk Saleh, kajian menggunakan regresi linear
+sederhana dari 36 penampakan \citep{Herdianti2025}. Kajian-kajian lokal
+tersebut menemukan bahwa suhu permukaan laut dan klorofil-a berkaitan dengan
+kemunculan hiu paus \citep{Ranintyari2018,Manuhutu2021,Herdianti2025}. Arus
+permukaan juga berpengaruh di Teluk Cenderawasih
+\citep{Ranintyari2018,Manuhutu2021}. Pada skala kepulauan, \citet{Putra2026}
+menggunakan telemetri satelit dari 70 hiu paus yang seluruhnya ditandai di
+empat lokasi agregasi (Teluk Cenderawasih, Kaimana, Teluk Saleh, dan Teluk
+Tomini). Data tersebut digunakan untuk membangun 73 model MaxEnt dengan
+rata-rata AUC 0,82. Sementara itu, \citet{Setyawan2025} mencatat 1.118
+penampakan selama 13 tahun di Bentang Laut Kepala Burung. Hampir seluruh
+penampakan tersebut berada di sekitar bagan, dan 97,8\% di antaranya hanya
+berasal dari dua wilayah, yaitu Teluk Cenderawasih dan Kaimana. Populasinya
+didominasi jantan muda dengan rasio 8,8:1 \citep{Setyawan2025}. Dengan
+demikian, data kemunculan hiu paus di Indonesia memiliki ketersediaan yang
+rendah, mengelompok di beberapa lokasi agregasi, dan bias terhadap jantan muda.
+Akibatnya, model yang hanya dilatih dengan data Indonesia berisiko tidak
+mewakili seluruh perairan Indonesia.
+
+% DRAF P4 (Gemini Neon, 2026-11-21, dirapikan asisten Claude Opus 5.5): sunting ke gaya sendiri.
+Salah satu cara untuk mengatasi keterbatasan data Indonesia adalah memanfaatkan
+data dari wilayah dengan ketersediaan data yang tinggi, seperti Australia.
+Pilihan ini beralasan karena habitat yang sesuai menurut model Australia meluas
+hingga perairan Indonesia \citep{Reynolds2017}. Pendekatan serupa pernah
+diterapkan oleh \citet{Bridges2023}, yang mentransfer model MaxEnt karang air
+dingin dari Atlantik Utara yang kaya data ke Atlantik Selatan yang kekurangan data
+dan memiliki kondisi lingkungan serupa. Model hasil transfer tersebut mencapai
+AUC 0,70 pada data validasi independen. Namun, \citet{Wilson2026} menemukan
+bahwa tidak satu pun dari 24 konfigurasi model berbasis telemetri sepuluh
+spesies burung laut dan mamalia laut di Samudra Selatan mencapai kemampuan
+transfer spasial yang tinggi secara konsisten. Mereka menjelaskan bahwa model
+yang ditransfer lintas ruang umumnya berkinerja buruk karena terjadi
+ekstrapolasi lingkungan dan relung lingkungan dapat berbeda antarpopulasi. Di
+Indonesia, \citet{Sahri2023} memproyeksikan model \textit{Random Forest} paus
+dan lumba-lumba dari empat wilayah kalibrasi ke seluruh Zona Ekonomi Eksklusif
+Indonesia. Proyeksi untuk paus sperma menempatkan kesesuaian tinggi di dekat
+pesisir pulau, padahal habitatnya berada di laut lepas. Para penulis tersebut
+mengaitkan hal ini dengan bias pengambilan sampel ke arah pesisir pada
+penampakan oportunistis. Secara umum, model yang berkinerja serupa di wilayah
+kalibrasi dapat berbeda jauh ketika ditransfer ke kondisi lingkungan baru
+\citep{Elith2010}. Selain perbedaan lingkungan, kajian global pada hiu paus
+juga menunjukkan bahwa pengaruh peubah lingkungan terhadap kemunculan sedikit
+berbeda antarsamudra \citep{Sequeira2014}. Oleh karena itu, data Australia
+tidak dapat digunakan begitu saja. Pemodelan habitat membutuhkan cara untuk
+menangani perbedaan antara wilayah sumber (Australia) dan wilayah target
+(Indonesia).
+
+% DRAF P5 (Gemini Neon, 2026-11-21, dirapikan asisten): sunting ke gaya sendiri.
+Selain transfer langsung, beberapa pendekatan dapat memanfaatkan data dari
+wilayah sumber, dan setiap pendekatan menangani masalah yang berbeda.
+\textit{Subsampling} lingkungan, seperti pengelompokan lingkungan dan
+penipisan jarak lingkungan, menyaring catatan kemunculan pada ruang lingkungan
+untuk mengoreksi bias pengambilan sampel \citep{Pili2025}. Pada uji spesies
+virtual, pendekatan ini menghasilkan model paling tangguh untuk mentransfer
+prediksi ke lingkungan baru \citep{Pili2025}. Namun, pendekatan ini tidak
+menggunakan informasi tentang wilayah target, sehingga penelitian ini
+memakainya sebagai pembanding. Pendekatan lain adalah penggabungan data
+\textit{presence-absence} dan \textit{presence-only}. Dalam simulasi,
+penggabungan tersebut meningkatkan transfer model kesesuaian habitat ke lokasi
+yang minim kajian \citep{Patterson2025}. Penelitian ini tidak menerapkannya
+karena data yang tersedia hanya berupa \textit{presence-only}. Pendekatan
+ketiga adalah pembobotan sampel (\textit{instance weighting}). Pembobotan
+sampel memberi bobot pada setiap sampel sumber agar sebaran sumber terbobot
+menyerupai sebaran target, secara teoretis sebesar rasio kerapatan target
+terhadap kerapatan sumber \citep{Zhuang2021,Kouw2021}.\ \citet{Saigusa2026}
+menerapkan pembobotan sampel dengan rasio kerapatan yang diduga melalui uLSIF
+pada transfer model antarwilayah. Rata-rata AUC uji pada 78 spesies hanya
+berubah dari 0,633 menjadi 0,635. Namun, peningkatannya lebih tinggi saat
+pergeseran sebaran besar dan catatan kemunculan sedikit \citep{Saigusa2026}.
+Para penulis tersebut menyatakan hanya menggunakan uLSIF dan menyebut
+\textit{Kernel Mean Matching} (KMM) sebagai alternatif \citep{Saigusa2026}.
+KMM dipilih karena menduga bobot dengan menyamakan rata-rata sampel sumber dan
+target pada ruang fitur kernel, tanpa menduga masing-masing kerapatan secara
+langsung \citep{Zhuang2021}. Dalam pendugaan galat spasial saat terjadi
+pergeseran sebaran, bobot rasio kerapatan dari estimasi kerapatan kernel
+menjadi tidak stabil ketika sampel mengelompok. Pada kondisi tersebut, KMM
+menghasilkan galat yang lebih rendah \citep{Serov2026}. Meskipun demikian,
+pembobotan sampel mengasumsikan hubungan spesies dengan lingkungan (distribusi
+bersyarat) sama pada kedua domain dan kondisi target berada dalam rentang
+sumber \citep{Kouw2021}. Pembobotan sampel juga terutama sesuai apabila
+perbedaan antara domain sumber dan target tidak terlalu besar
+\citep{Zhang2024}. Pada tolok ukur metode adaptasi domain, pembobotan sampel
+memberi peningkatan yang terbatas, bekerja paling baik pada model
+teregularisasi, dan jarang memperburuk hasil (tahan terhadap transfer negatif)
+\citep{Lalou2025}. Selain meminjam data dari wilayah lain, penelitian juga
+dapat memperluas data kemunculan Indonesia sendiri dari sumber lain.
+
+% DRAF P6 (Gemini Neon, 2026-11-21): sunting ke gaya sendiri.
+Media sosial telah memasok data kemunculan berbagai spesies. Di Teluk Honda,
+Palawan, Filipina, \citet{Araujo2019} menambah catatan individu hiu paus
+melalui identifikasi foto dari operator lokal dan penambangan data unggahan
+publik di Facebook, Instagram, Twitter, dan YouTube. Masyarakat menyumbang 36\%
+dari 183 individu hiu paus yang teridentifikasi. Di Yunani, \citet{Taklis2020}
+menelusuri Facebook, Twitter, dan YouTube pada 2017--2019 dan menemukan 116
+unggahan tentang hiu. Mereka mencatat 22 kasus salah identifikasi oleh nelayan.
+Temuan tersebut menunjukkan perlunya verifikasi data media sosial. Di Fiji,
+sedikitnya dua peneliti meninjau setiap unggahan Facebook untuk memeriksa
+identitas spesies, mutu media, tanggal, dan lokasi sebelum memakainya
+\citep{Dehm2025}. Di Victoria, Australia, \citet{Beddoe2026} mencatat 3.209
+laporan mamalia laut dari grup Facebook dan memverifikasi 1.124 laporan hingga
+tingkat spesies setelah peninjauan pakar. Pada lima takson
+(\textit{Tursiops} spp., orca, paus bungkuk, paus biru, dan paus sikat
+selatan), Facebook menghasilkan proporsi sel kisi unik secara geografis yang
+lebih tinggi daripada GBIF \citep{Beddoe2026}. Untuk delapan spesies lebah
+Australia, \citet{Moore2024} menemukan bahwa penambahan catatan media sosial
+(Flickr) atau sains komunitas (iNaturalist) pada model relung MaxEnt mengubah
+sebaran prediksi dan bobot peubah lingkungan secara signifikan. Perubahan ini
+lebih bergantung pada lokasi catatan tambahan daripada jumlahnya. Karena tidak
+memiliki data uji independen, kajian ini hanya menunjukkan perubahan, bukan
+apakah perubahan itu merupakan perbaikan. Kajian-kajian tersebut mengukur
+jumlah titik, sel kisi unik, luas sebaran, atau perubahan prediksi. Namun,
+kajian-kajian tersebut tidak mengukur sejauh mana catatan tambahan memperluas
+cakupan lingkungan model kesesuaian habitat sambil mempertahankan kinerjanya.
+
+% DRAF P7 (Gemini Neon, 2026-11-21): sunting ke gaya sendiri.
+Berdasarkan uraian tersebut, penelitian ini membandingkan model kesesuaian
+habitat hiu paus di perairan Indonesia yang hanya dilatih dengan data
+Indonesia dengan skema yang memanfaatkan data Australia. Skema pemanfaatan data
+Australia tersebut mencakup transfer langsung, adaptasi domain \textit{Kernel
+Mean Matching} (KMM) berbasis pembobotan sampel, dan \textit{subsampling}
+lingkungan. Penelitian ini juga menguji apakah penambahan data kemunculan dari
+YouTube dan berita daring yang telah diverifikasi pakar memperluas cakupan
+lingkungan model tanpa menurunkan kinerjanya.
+
+\begin{comment}
 Hiu paus (\textit{Rhincodon typus}) merupakan ikan terbesar di dunia dan
 berstatus Terancam (\textit{Endangered}) dalam Daftar Merah IUCN
 \citep{Pierce2025}. Di Indonesia, spesies ini dilindungi penuh sejak 2013
@@ -68,7 +246,6 @@ Berdasarkan hal tersebut, penelitian ini memodelkan kesesuaian habitat hiu paus
 di perairan Indonesia dengan memanfaatkan data Australia melalui adaptasi domain
 KMM serta data media sosial yang diverifikasi pakar.
 
-\begin{comment}
 Revisi:
 1. General ke spesifik, Australia dulu baru ke lokal
 2. HSM tapi di luar negeri, Indonesia, dan negara tetangga. Apa bedanya penelitian kita dan penelitian mereka?
